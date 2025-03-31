@@ -44,6 +44,27 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+    
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   
   @keyframes pulse {
     0% {
@@ -89,7 +110,8 @@
     align-items: center;
   }
   
-  .navbar-links a {
+  .navbar-links a,
+  .navbar-links li a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
@@ -112,6 +134,15 @@
   .navbar-links a:hover::after {
     width: 100%;
   }
+
+  /* Active link style */
+  .active-link {
+    color: var(--primary);
+    font-weight: 600;
+    border-bottom: 3px solid var(--accent);
+    background-color: transparent;
+    transition: var(--transition);
+  }
   
   .menu-icon {
     display: none;
@@ -123,21 +154,20 @@
   /* ===============================
      HERO SECTION
      =============================== */
-  .hero-section {
+  .hero-section1 {
     position: relative;
     width: 100%;
     height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(
-    135deg,
-    #1e5344 0%,
-    #2a684f 50%, 
-    #ffe123 100%
-  ); */
-  background: linear-gradient(135deg, #1e5344 0%, #2a684f 40%, #ffe123 100%);
-    overflow: hidden;
+    background-image: url('../../public/images/Background.jpg') ;
+    background-position: 90% 80%;
+    background-size: cover;
+    /* animation: fadeIn 2s ease-in ; */
+    background-attachment: fixed;
+    overflow: visible;
+    
   }
   
   .hero-overlay {
@@ -147,10 +177,11 @@
     width: 100%;
     height: 100%;
     background: var(--overlay-dark);
+    overflow: visible;
     z-index: 1;
   }
   
-  .hero-content {
+  .hero-content1 {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -158,29 +189,64 @@
     margin-left: 4rem;
     max-width: 90%;
     padding: 0 1rem;
-    animation: fadeInUp 1s var(--transition) both;
+    /* animation: fadeInUp 1s var(--transition) both; */
   }
   
-  .hero-content h1 {
+  .hero-content1 h1 {
     font-size: 3.5rem;
     margin-top: 6rem;
     margin-bottom: 1rem;
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-    animation: fadeInUp 1s var(--transition) both;
+    /* animation: fadeInUp 1s var(--transition) both; */
   }
   
-  .hero-content p {
+  .hero-content1 p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
     color: #fff;
-    animation: fadeInUp 1s var(--transition) both;
+    /* animation: fadeInUp 1s var(--transition) both; */
   }
+
+  /* Stats Section */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+  animation: fadeInUp 2s ease-out;
+}
+
+.stat-item{
+  display: flex;
+  align-items: center;
+}
+
+.stat-item h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--secondary); /* Bright Yellow */
+  animation: fadeInUp 2.5s ease-out;
+  padding: 0 1rem;
+  border-right: 2px solid var(--background);
+}
+
+/* Add the vertical line between two h2 elements */
+
+/* .stat-item h2:not(:last-child) {
+  border-right: 3px solid var (--background);
+  padding-right: 20px;
+  margin-right: 20px;
+} */
+
+.stat-item :last-child h2 {
+ border-right: none;
+}
   
   /* ===============================
      CTA BUTTON
      =============================== */
-  .cta-button {
+  .cta-button1 {
   background: linear-gradient(15deg, #1e5344 0%, #2a684f 10%, #ffe123 100%);
   /* background: linear-gradient(45deg, #1e5344, #2a684f); */
     color: #fff;
@@ -197,58 +263,97 @@
     animation: pulse 2s infinite;
   }
   
-  .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  .cta-button1:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   }
   
-  /* ===============================
-     SERVICES OVERVIEW (CSS GRID)
-     =============================== */
-  .services-overview {
+/* ===============================
+   SERVICES OVERVIEW
+   =============================== */
+   .services-overview {
+    padding: 4rem 2rem;
+    background-color: #fff;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+  }
+  
+  /* Grid container for cards */
+  .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    padding: 4rem 2rem;
-    background-color: #fff;
-    animation: fadeInUp 1s var(--transition) both;
+    justify-content: center;
   }
   
+  /* Individual service cards */
   .service-card {
     background: #fff;
     border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    padding: 2rem;
     text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     transition: transform var(--transition), box-shadow var(--transition);
   }
   
   .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
   }
   
-  .service-card h2 {
+  /* Title with icon */
+  .service-heading {
     color: var(--primary);
-    margin-bottom: 1rem;
     font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
   
+  /* Description */
   .service-card p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    color: var(--text-color);
   }
   
-  .service-card .service-link {
-    color: var(--secondary);
+  /* CTA Button */
+  .cta-link-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
     font-weight: 600;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 30px;
     text-decoration: none;
-    transition: color var(--transition);
+    transition: background-color var(--transition), transform var(--transition);
+    display: inline-block;
   }
   
-  .service-card .service-link:hover {
-    color: var(--accent);
+  .cta-link-button:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
   }
+
+  
   
   /* ===============================
      QUOTE BUTTON CONTAINER
@@ -266,16 +371,16 @@
      ABOUT US, FAQ, CONTACT SECTIONS
      =============================== */
   .about-us-section,
-  .faq-section,
-  .contact-section {
+  .faq-section
+   {
     padding: 4rem 2rem;
     background-color: #fff;
     animation: fadeInUp 1s var(--transition) both;
   }
   
   .about-us-section h2,
-  .faq-section h2,
-  .contact-section h2 {
+  .faq-section h2
+   {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
@@ -283,14 +388,95 @@
   }
   
   .about-us-section p,
-  .faq-section p,
-  .contact-section p {
+  .faq-section p
+   {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.1rem;
     text-align: center;
     line-height: 1.8;
   }
+
+  /* Contact styles in home page */
+  
+.homepage-contact-glimpse {
+  background-color: var(--background);
+  color: var(--text-color);
+  padding: 4rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 4rem auto 2rem auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  /* animation: fadeInUp 1s ease-in-out both; */
+}
+
+.homepage-contact-glimpse h2 {
+  font-size: 2.3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.homepage-contact-glimpse p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+.cta-link-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--secondary);
+  color: var(--text-color);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.cta-link-button:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+}
+/* ===============================
+   SVG DIVIDERS (Wavy Transitions)
+   =============================== */
+   .svg-divider {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .svg-divider svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+  }
+  
+  /* Optional: Flip the divider (for top vs bottom use) */
+  .svg-divider.flip svg {
+    transform: rotate(180deg);
+  }
+  [data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+  }
+  
+  [data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+
+  
 
   /* FOOTER STYLES */
 .footer {
@@ -313,6 +499,12 @@
   margin: 0.5rem;
   min-width: 220px; /* Ensures columns don't get too narrow */
 }
+
+.footer-column svg {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
 
 .footer-column h4 {
   margin-bottom: 1rem;
@@ -383,24 +575,38 @@
       display: block;
     }
     
-    .hero-section {
-      height: 60vh;
+    .hero-section1 {
+      height: 70vh;
+      background-position: center top;
+      background-attachment: scroll;
+
     }
-    .hero-content {
-      margin-top: 7rem;
+    .hero-content1 {
+      margin-top: 3rem;
       margin-left: 1.8rem;
     }
     
-    .hero-content h1 {
+    .hero-content1 h1 {
       font-size: 2rem;
     }
     
-    .hero-content p {
+    .hero-content1 p {
       font-size: 1rem;
+      padding: 0 1rem;
     }
-    .cta-button {
+    .cta-button1 {
       padding: 0.8rem 1.5rem;
       font-size: 0.7rem;
+    }
+    .stats-container{
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+    .stat-item h2 {
+      font-size: 1.5rem;
+      border-right: none;
+      padding: 0;
+      text-align: center;
     }
     
     .services-overview {

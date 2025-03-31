@@ -1,0 +1,179 @@
+/* === Service Page Styles === */
+.service-page {
+    padding: 2rem 1.5rem;
+    background-color: var(--background);
+    color: var(--text-color);
+    width: 100%;
+  }
+  
+  .service-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .service-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .image-comparison {
+    margin: 3rem auto;
+    border-radius: 12px;
+    max-width: 1200px;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  
+  .service-details {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+  }
+  
+  .service-details h2, .service-details h3 {
+    color: var(--primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .service-details p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+  
+  .process-list, .benefits-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .process-list li,
+  .benefits-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .icon {
+    color: var(--accent);
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+  }
+  
+  .faq-section {
+    margin-top: 2rem;
+  }
+  
+  .faq-item {
+    margin-bottom: 1.5rem;
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--primary);
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  
+  .faq-item strong {
+    display: block;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .cta-button-container1 {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+  
+  .cta-button2 {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-button2:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* back button */
+  .back-button-wrapper {
+
+    padding: 1.5rem 2rem 0 2rem;
+  }
+  
+  .back-to-services {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .back-to-services:hover {
+    color: var(--accent);
+    transform: translateX(-4px);
+  }
+  
+  
+
+  /* svg divider */
+  /* .svg-divider {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    position: relative;
+    margin-top: -1px;
+    z-index: 1;
+  }
+  
+  .svg-divider svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+  }
+  
+  .svg-divider.flip svg {
+    transform: rotate(180deg);
+  } */
+  
+  
+  /* ===============================
+     RESPONSIVE DESIGN
+     =============================== */
+  @media (max-width: 768px) {
+    .service-header h1 {
+      font-size: 2rem;
+    }
+  
+    .service-details {
+      padding: 1.5rem 1rem;
+    }
+  
+    .image-comparison {
+      margin: 2rem 0;
+      height: 30vh;
+    }
+    
+  }
+  

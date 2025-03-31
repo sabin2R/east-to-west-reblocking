@@ -1,42 +1,98 @@
 // src/pages/HomePage.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Element } from 'react-scroll';
 import ServicesOverview from '../components/ServicesOverview';
 import AboutUs from './AboutUs';
 import FAQ from './FAQ';
 import '../styles/style.css';
 import Footer from '../components/Footer';
+import CountUp from 'react-countup';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const HomePage = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  
+    // const handleScroll = () => AOS.refresh();
+    // window.addEventListener('scroll', handleScroll);
+  
+    // return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+
   return (
     <>
-
       <Element name="home">
-        <header className="hero-section">
+        <header className="hero-section1">
           <div className="hero-overlay">
-            <div className="hero-content">
+            <div className="hero-content1" data-aos="fade-up">
               <h1>Welcome to East to West Reblocking</h1>
               <p>Your trusted partner for reblocking, restumping, underpinning, and floor levelling.</p>
-              <a href="/quote-request" className="cta-button">
+              <div className="stats-container">
+                <div className="stat-item">
+                  <h2>Est: <CountUp start={2025} end={2008} duration={5} /></h2>
+                </div>
+                <div className="stat-item">
+                  <h2><CountUp start={0} end={1000} duration={3} />+ Projects Completed</h2>
+                </div>
+              </div>
+              <a href="/quote-request" className="cta-button1">
                 Get a Free Quote
               </a>
             </div>
           </div>
         </header>
       </Element>
+
+      <div className="svg-divider">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#eeeeee" />
+        </svg>
+      </div>
+
       <AboutUs />
+
+      <div className="svg-divider" data-aos='fade-up'>
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#eeeeee" />
+        </svg>
+      </div>
+
       <Element name="services">
         <ServicesOverview />
       </Element>
-      
+      <div className="svg-divider" data-aos='fade-up'>
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#eeeeee" />
+        </svg>
+      </div>
+
       <FAQ />
+
+      <div className="svg-divider" data-aos='fade-up'>
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#eeeeee" />
+        </svg>
+      </div>
+
       <Element name="contact">
-        <section className="contact-section">
-          <h2>Contact Us</h2>
-          <p>Please get in touch with us for any inquiries.</p>
-          {/* Include your contact form or additional contact info here */}
+        <section className="homepage-contact-glimpse" data-aos="fade-right">
+          <h2>Need Help With Reblocking?</h2>
+          <p>
+            Whether it's reblocking, restumping, or floor levelling — we're just a message away.
+          </p>
+          <a href="/contact" className="cta-link-button">Get in Touch</a>
         </section>
       </Element>
+
+      <div className="svg-divider flip" style={{marginBottom: '-30px'}} data-aos='fade-up'>
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#eeeeee" />
+  </svg>
+</div>
+
+
       <Footer />
     </>
   );

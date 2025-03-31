@@ -1,0 +1,199 @@
+/* contact.css */
+
+/* General Page Styling */
+.contact-page {
+    font-family: Arial, sans-serif;
+    padding: 60px 30px;
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  .contact-page .footer{
+    margin-left: -30px;
+  margin-right: -30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  margin-bottom: -60px;
+  }
+  
+  /* Hero Section */
+.hero-section0 {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1e5344;
+    color: #fff;
+    flex-direction: column;
+    border-radius: 8px;
+    margin-bottom: 40px; /* Adds space between hero section and the content below */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for extra depth */
+  }
+  
+  /* Hero Section Heading */
+  .hero-section0 h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Hero Section Sub-text */
+  .hero-section0 p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  /* Form Styling */
+  .contact-form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form h2 {
+    font-size: 28px;
+    color: var(--primary);
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #4A90E2;
+    outline: none;
+  }
+  
+  .cta-button {
+    padding: 12px 24px;
+    background-color: #1e5344;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+    width: 100%;
+  }
+  
+  .cta-button:hover {
+    background-color: #D5B942;
+  }
+  
+  /* Success Message */
+  .thank-you-message {
+    text-align: center;
+    font-size: 20px;
+    color:var(--accent);
+  }
+  
+  .contact-info {
+    margin-top: 40px;
+    text-align: center;
+    
+  }
+  
+  .contact-info h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info a {
+    color: #4A90E2;
+    text-decoration: none;
+  }
+  
+  .google-maps iframe {
+    border: 0;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border-radius: 8px;
+  }
+
+  /* Scroll-to-top Button */
+.scroll-to-top {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    margin: 3rem auto;
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  
+  .scroll-to-top:hover {
+    background-color: var(--accent);
+  }
+
+  /* Floating Call Button */
+.floating-call {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  .floating-call:hover {
+    background-color: var(--primary);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-page .footer {
+        margin-left: -30px;
+        margin-right: -30px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+    .hero-section {
+      padding: 30px 0;
+    }
+    
+    .cta-button {
+      width: 100%;
+      transition: background-color var(--transition), transform var(--transition);
+    }
+
+    .contact-form-container{
+        padding: 20px;
+    }
+  }
+  
