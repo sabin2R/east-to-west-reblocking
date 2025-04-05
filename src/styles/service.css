@@ -1,49 +1,90 @@
-/* === Service Page Styles === */
 .service-page {
-    padding: 2rem 1.5rem;
-    background-color: var(--background);
+    padding: 2.5rem 1.2rem;
+    background-color: #f8f9fa;
+    font-family: 'Inter', sans-serif;
     color: var(--text-color);
-    width: 100%;
   }
+
   
+  
+  /* ---------- Header ---------- */
   .service-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
   
   .service-header h1 {
     font-size: 2.5rem;
     color: var(--primary);
+    font-weight: 700;
     margin-bottom: 0.5rem;
   }
   
   .service-header p {
-    font-size: 1.2rem;
-    max-width: 800px;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 750px;
     margin: 0 auto;
   }
   
-  .image-comparison {
-    margin: 3rem auto;
-    border-radius: 12px;
-    max-width: 1200px;
-    justify-content: center;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  /* ---------- Back Button ---------- */
+  .back-button-wrapper.sticky-back {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #f8f9fa;
+    padding: 1rem 1rem 0 1rem;
   }
   
-  .service-details {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.05);
-  }
-  
-  .service-details h2, .service-details h3 {
+  .back-to-services {
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .back-to-services:hover {
+    color: var(--accent);
+    transform: translateX(-3px);
+  }
+  
+  /* ---------- Image Comparison ---------- */
+  .custom-slider {
+    height: 400px;
+    max-width: 900px;
+    margin: 3rem auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  }
+  
+  .custom-slider img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* ---------- Details Card ---------- */
+  .service-details {
+    background: #fff;
+    padding: 3rem 2rem;
     margin-top: 2rem;
+    border-radius: 16px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+  }
+  
+  .service-details h2,
+  .service-details h3 {
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-top: 2.5rem;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -51,129 +92,137 @@
   }
   
   .service-details p {
-    margin-bottom: 1rem;
-    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: #333;
   }
   
-  .process-list, .benefits-list {
+  /* ---------- Process + Benefits ---------- */
+  .process-list,
+  .benefits-list {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 1rem 0;
   }
   
   .process-list li,
   .benefits-list li {
+    background-color: #f1f3f4;
+    padding: 0.75rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
     display: flex;
     align-items: flex-start;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
+    gap: 0.7rem;
     font-size: 1rem;
   }
   
   .icon {
     color: var(--accent);
-    margin-top: 0.2rem;
-    flex-shrink: 0;
+    margin-top: 0.3rem;
   }
   
+  /* ---------- FAQ Cards ---------- */
   .faq-section {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
   
   .faq-item {
-    margin-bottom: 1.5rem;
-    background-color: #f9f9f9;
-    border-left: 4px solid var(--primary);
-    padding: 1rem;
-    border-radius: 6px;
+    border-left: 5px solid var(--primary);
+    background: #fffefc;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
   }
   
   .faq-item strong {
     display: block;
     font-weight: 600;
-    color: var(--primary);
     margin-bottom: 0.5rem;
+    color: var(--primary);
   }
   
-  .cta-button-container1 {
-    margin-top: 2.5rem;
-    text-align: center;
-  }
+  /* ---------- CTA Button ---------- */
   
-  .cta-button2 {
-    background-color: var(--primary);
-    color: #fff;
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .cta-button2:hover {
+  .floating-quote-button {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
     background-color: var(--accent);
+    color: white;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 30px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    z-index: 999;
+    animation: shakeAnimation 4s ease-in-out infinite;
+    transition: transform 0.3s ease;
+  }
+  
+  .floating-quote-button:hover {
+    background-color: var(--primary);
     transform: translateY(-2px);
   }
-
-  /* back button */
-  .back-button-wrapper {
-
-    padding: 1.5rem 2rem 0 2rem;
+  
+  .floating-quote-button .icon {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
   }
+  /* Subtle shake animation every few seconds */
+@keyframes shakeAnimation {
+    0%, 93%, 100% {
+      transform: translate(0);
+    }
+    95% {
+      transform: translateX(-3px);
+    }
+    96% {
+      transform: translateX(3px);
+    }
+    97% {
+      transform: translateX(-2px);
+    }
+    98% {
+      transform: translateX(2px);
+    }
+    99% {
+      transform: translateX(-1px);
+    }
+}
   
-  .back-to-services {
-    color: var(--primary);
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1rem;
-    display: inline-block;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .back-to-services:hover {
-    color: var(--accent);
-    transform: translateX(-4px);
-  }
-  
-  
-
-  /* svg divider */
-  /* .svg-divider {
-    width: 100%;
-    height: 100px;
-    overflow: hidden;
-    line-height: 0;
-    position: relative;
-    margin-top: -1px;
-    z-index: 1;
-  }
-  
-  .svg-divider svg {
-    display: block;
-    width: 100%;
-    height: 100px;
-  }
-  
-  .svg-divider.flip svg {
-    transform: rotate(180deg);
-  } */
-  
-  
-  /* ===============================
-     RESPONSIVE DESIGN
-     =============================== */
+  /* ---------- Responsive ---------- */
   @media (max-width: 768px) {
+    .custom-slider {
+      height: 250px;
+      margin-top: 2rem;
+    }
+  
     .service-header h1 {
       font-size: 2rem;
     }
   
     .service-details {
-      padding: 1.5rem 1rem;
+      padding: 2rem 1rem;
     }
   
-    .image-comparison {
-      margin: 2rem 0;
-      height: 30vh;
+    .faq-item,
+    .process-list li,
+    .benefits-list li {
+      font-size: 0.95rem;
     }
-    
+  
+    .floating-quote-button {
+        right: 15px;
+        bottom: 15px;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
   }
   

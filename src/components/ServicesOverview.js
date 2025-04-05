@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaTools, FaHome, FaHardHat, FaLevelUpAlt } from 'react-icons/fa';
+// import Footer from './Footer';
 
 const services = [
   {
@@ -32,6 +33,7 @@ const services = [
 
 const ServicesOverview = () => {
   return (
+    <section className='main'>
     <section className="services-overview">
       <div className="section-header">
         <h2 className="section-title" data-aos="fade-down">Our Core Services</h2>
@@ -56,6 +58,8 @@ const ServicesOverview = () => {
           </div>
         ))}
       </div>
+    </section>
+    {/* <Footer/> */}
     </section>
   );
 };

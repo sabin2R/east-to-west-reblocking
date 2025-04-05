@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
-import { FaTools, FaRulerCombined, FaBroom, FaCheckCircle, FaArrowLeft } from 'react-icons/fa';
+import { FaTools, FaRulerCombined, FaBroom, FaCheckCircle, FaArrowLeft,FaFileInvoice } from 'react-icons/fa';
 import '../styles/service.css';
 import Footer from '../components/Footer';
 
@@ -11,8 +11,8 @@ const serviceDetails = {
   reblocking: {
     title: "Reblocking",
     description: "Reblocking involves replacing deteriorated stumps under your home to restore structural integrity and ensure level floors.",
-    beforeImage: '/images/E2W2.png',
-    afterImage: '/images/wpslogo.png',
+    beforeImage: '/images/reblocking-before.jpg',
+    afterImage: '/images/reblocking-after.jpg',
     detailedDescription: `Over time, timber stumps—especially old red gum stumps begin to rot, shift, or sink due to ground moisture and aging. Our reblocking process starts with the removal of the plinth boards and a full underfloor clean-out to create a safe, accessible workspace for our team. We assess all stumps — timber, concrete, or otherwise — and safely lift the structure using hydraulic jacks. All deteriorated red gum stumps are replaced with high-quality concrete or galvanized steel stumps to prevent future rot or termite issues.
 
 If the property already has concrete stumps, we inspect and retain those in good condition. Additional stumps are strategically installed in high-load areas to ensure optimal stability. Once the structure is leveled using our Nivcomp NI0SD1-H25 altimeter, we properly pack any gaps between the bearer and stump with durable, load-rated packers. This ensures millimeter-accurate leveling across the home, providing both structural safety and comfort underfoot.`,
@@ -73,8 +73,9 @@ Our team performs restumping using top-tier steel or concrete stumps, ensuring t
   underpinning: {
     title: "Underpinning",
     description: "Underpinning stabilizes and strengthens existing foundations by extending their depth or base.",
-    beforeImage: '/images/underpinning-before.jpg',
-    afterImage: '/images/underpinning-after.jpg',
+    afterImage: '/images/underpinning-after.jpeg',
+    beforeImage: '/images/underpinning-before.jpeg',
+   
     detailedDescription: `Our underpinning service is designed for homes suffering from sinking, cracked, or unstable foundations. Using techniques such as pit excavation and additional concrete footing installation, we reinforce the foundation from underneath. Each site is carefully analyzed by our structural experts before planning begins. We prioritize both safety and precision, especially on sloped or moisture-affected land.
 
 Our use of advanced laser leveling and Nivcomp altimeters ensures accurate load transfer and minimal disruption to your structure. This service is ideal for correcting foundation settlement, preventing future movement, and preparing a property for additional storeys or renovations.`,
@@ -137,6 +138,7 @@ const ServicePage = () => {
   if (!service) return <div className="not-found">Service not found.</div>;
 
   return (
+    <div className="main">
     <div className="service-page">
       <Helmet>
         <title>{service.title} | East to West Reblocking</title>
@@ -155,12 +157,26 @@ const ServicePage = () => {
       </section>
 
       <section className="image-comparison">
-        <ReactCompareSlider
-          itemOne={<ReactCompareSliderImage src={service.beforeImage} alt="Before" />}
-          itemTwo={<ReactCompareSliderImage src={service.afterImage} alt="After" />}
-          position={50}
-        />
-      </section>
+  <ReactCompareSlider
+    className="custom-slider"
+    itemOne={
+      <ReactCompareSliderImage
+        src={service.beforeImage}
+        alt="Before"
+        style={{ objectFit: 'cover' }}
+      />
+    }
+    itemTwo={
+      <ReactCompareSliderImage
+        src={service.afterImage}
+        alt="After"
+        style={{ objectFit: 'cover' }}
+      />
+    }
+    position={50}
+  />
+</section>
+
 
       <section className="service-details">
         <h2>About the Service</h2>
@@ -201,11 +217,15 @@ const ServicePage = () => {
         </div>
 
         <div className="cta-button-container1">
-          <Link to="/quote-request" className="cta-button2">Request a Quote</Link>
+          <Link to="/quote-request" className="floating-quote-button" aira-label="Request a Quote">
+          <FaFileInvoice style={{color: "white" }} className='icon'/> Get Quote
+          </Link>
         </div>
       </section>
 
-      <Footer />
+     
+    </div>
+    <Footer />
     </div>
   );
 };
