@@ -15,6 +15,7 @@ const Footer = () => {
           <p>
             Ensuring your property’s foundation is secure and level. We specialize in
             reblocking, restumping, underpinning, and floor levelling.
+            
           </p>
         </div>
 
@@ -24,7 +25,7 @@ const Footer = () => {
           <a href="#about">About Us</a>
           <a href="/service">Services</a>
           <a href="/quote-request">Quote Request</a>
-          <a href="#faq">FAQ</a>
+          <a href="/faq">FAQ</a>
           <a href="/contact">Contact</a>
         </div>
 
@@ -37,7 +38,6 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {/* If using the Font Awesome CDN */}
               {/* <i className="fas fa-map-marker-alt"></i> 7 Wimba Ct, Coolaroo, VIC 3048
               If using the React package:  */}
               <FontAwesomeIcon icon={faMapMarkerAlt} /> 7 Wimba Ct, Coolaroo, VIC 3048
@@ -61,7 +61,8 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} East to West Reblocking. All rights reserved.</p>
+        <p>ABN 75 138 126 146</p>
+        <p>&copy; {new Date().getFullYear()} East to West Reblocking. All rights reserved. </p>
       </div>
     </footer>
   );

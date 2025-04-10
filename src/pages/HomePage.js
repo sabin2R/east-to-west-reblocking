@@ -68,7 +68,7 @@ const HomePage = () => {
         </svg>
       </div>
 
-      <FAQ />
+      <FAQ  previewCount={2}/>
 
       <div className="svg-divider" data-aos='fade-up'>
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
