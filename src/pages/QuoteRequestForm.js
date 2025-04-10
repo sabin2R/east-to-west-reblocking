@@ -82,6 +82,7 @@ const QuoteRequestForm = () => {
   };
 
   return (
+    <div className= "main">
     <div className="quote-request-page">
       <Helmet>
         <title>Request a Quote - East to West Reblocking</title>
@@ -178,7 +179,9 @@ const QuoteRequestForm = () => {
       </div>
 
       <ToastContainer position="bottom-right" autoClose={3000} hideProgressBar={false} />
-      <Footer />
+      
+    </div>
+    <Footer />
     </div>
   );
 };

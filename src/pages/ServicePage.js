@@ -38,6 +38,12 @@ If the property already has concrete stumps, we inspect and retain those in good
       { q: "Do you replace old red gum stumps?", a: "Yes, we remove and replace all red gum stumps with stronger, more durable concrete or steel options." },
       { q: "What if my house already has some concrete stumps?", a: "We inspect and retain any sound concrete stumps, and install new ones only where necessary." },
       { q: "Do you clean under the house before starting?", a: "Absolutely. Safety and cleanliness are priorities — we clear the area for worker access and tidy up after." }
+    ],
+    gallery: [
+      '/images/reblocking1.jpg',
+      '/images/bearer.jpg',
+      '/images/reblocking-restump.jpg',
+      '/images/steelStump.jpg'
     ]
   },
   restumping: {
@@ -68,6 +74,12 @@ Our team performs restumping using top-tier steel or concrete stumps, ensuring t
       { q: "How is restumping different from reblocking?", a: "Reblocking usually replaces all stumps, while restumping targets specific sections or stumps that are faulty or damaged." },
       { q: "Is restumping more affordable?", a: "Yes — it’s typically less expensive as fewer stumps are replaced, ideal for localized issues or renovations." },
       { q: "Can I restump just one side of my house?", a: "Yes — our team will assess and restump only the necessary sections to restore balance and support." }
+    ],
+    gallery: [
+      '/images/reblocking1.jpg',
+      '/images/reblocking-restump.jpg',
+      '/images/re.jpg',
+      '/images/re2.jpg'
     ]
   },
   underpinning: {
@@ -99,13 +111,19 @@ Our use of advanced laser leveling and Nivcomp altimeters ensures accurate load 
       { q: "How do I know if my home needs underpinning?", a: "Cracks in walls, doors not closing properly, or noticeable floor dips can indicate settlement issues." },
       { q: "Will this damage my landscaping?", a: "Minimal impact — our team carefully excavates and restores areas post-work." },
       { q: "Can I renovate after underpinning?", a: "Yes! In fact, it's recommended to stabilize your home before extensions or second-storey additions." }
+    ],
+    gallery: [
+      '/images/under.jpg',
+      '/images/reblocking2.jpg',
+      '/images/reblocking3.jpg',
+      '/images/reblocking4.jpg'
     ]
   },
   'floor-levelling': {
     title: "Floor Levelling",
     description: "We correct uneven or sloped floors using leveling compounds and laser precision techniques.",
-    beforeImage: '/images/floor-levelling-before.jpg',
-    afterImage: '/images/floor-levelling-after.jpg',
+    beforeImage: '/images/level.jpg',
+    afterImage: '/images/level2.jpg',
     detailedDescription: `Floor levelling is essential in homes with aging structures or shifting foundations that result in dips or slants across your floors. We begin with a full site inspection, identifying slope gradients and problem zones. After preparing the surface, we apply self-leveling compounds or raise structural sections underneath to correct the imbalance.
 
 Our crew uses tools like the Nivcomp NI0SD1-H25 altimeter to measure every degree of slope and ensure total accuracy. This service provides a solid, even base for laying floorboards, tiles, or other flooring types. It also improves safety and appearance inside your home.`,
@@ -127,6 +145,12 @@ Our crew uses tools like the Nivcomp NI0SD1-H25 altimeter to measure every degre
     faq: [
       { q: "Can floor levelling fix all dips and slopes?", a: "Yes — we correct both surface-level and subfloor issues, depending on your needs." },
       { q: "How long before we can walk on the floor?", a: "Typically 24–48 hours after compound application, depending on weather and humidity." }
+    ],
+    gallery: [
+      '/images/level2.jpg',
+      '/images/level.jpg',
+      '/images/level3.jpg',
+      '/images/level4.jpg'
     ]
   }
 };
@@ -138,96 +162,104 @@ const ServicePage = () => {
   if (!service) return <div className="not-found">Service not found.</div>;
 
   return (
-    <div className="main">
-    <div className="service-page">
-      <Helmet>
-        <title>{service.title} | East to West Reblocking</title>
-        <meta name="description" content={`Learn more about ${service.title} services.`} />
-      </Helmet>
+    <div className="glass-wrapper">
+      <div className="service-page glass-card">
+        <Helmet>
+          <title>{service.title} | East to West Reblocking</title>
+          <meta name="description" content={`Learn more about ${service.title} services.`} />
+        </Helmet>
 
-      <div className="back-button-wrapper sticky-back">
-        <Link to="/service" className="back-to-services">
-          <FaArrowLeft style={{ marginRight: '6px' }} /> Back to Services
-        </Link>
-      </div>
-
-      <section className="service-header">
-        <h1>{service.title}</h1>
-        <p>{service.description}</p>
-      </section>
-
-      <section className="image-comparison">
-  <ReactCompareSlider
-    className="custom-slider"
-    itemOne={
-      <ReactCompareSliderImage
-        src={service.beforeImage}
-        alt="Before"
-        style={{ objectFit: 'cover' }}
-      />
-    }
-    itemTwo={
-      <ReactCompareSliderImage
-        src={service.afterImage}
-        alt="After"
-        style={{ objectFit: 'cover' }}
-      />
-    }
-    position={50}
-  />
-</section>
-
-
-      <section className="service-details">
-        <h2>About the Service</h2>
-        <p>{service.detailedDescription}</p>
-
-        <h3><FaTools /> Our Process</h3>
-        <ul className="process-list">
-          {service.process.map((step, idx) => (
-            <li key={idx}><FaCheckCircle className="icon" /> {step}</li>
-          ))}
-        </ul>
-
-        <h3><FaRulerCombined /> Why We Use Nivcomp</h3>
-        <p>
-          To ensure pinpoint leveling, we rely on the Nivcomp NI0SD1-H25 — a German-engineered precision altimeter. It's trusted for its accuracy, durability, and reliability in foundation-level work.
-        </p>
-
-        <h3>Benefits</h3>
-        <ul className="benefits-list">
-          {service.benefits.map((benefit, idx) => (
-            <li key={idx}><FaCheckCircle className="icon" /> {benefit}</li>
-          ))}
-        </ul>
-
-        <h3><FaBroom /> Clean Site Guarantee</h3>
-        <p>
-          Our team ensures your space is spotless before we leave. We take pride in our post-work cleanup so your home looks better than ever — no dust, no tools left behind.
-        </p>
-
-        <h3>Common Questions</h3>
-        <div className="faq-section">
-          {service.faq.map((item, idx) => (
-            <div key={idx} className="faq-item">
-              <strong>Q: {item.q}</strong>
-              <p>A: {item.a}</p>
-            </div>
-          ))}
+        <div className="back-button-wrapper sticky-back">
+          <Link to="/service" className="back-to-services">
+            <FaArrowLeft /> Back to Services
+          </Link>
         </div>
 
-        <div className="cta-button-container1">
+        <section className="service-header">
+          <h1>{service.title}</h1>
+          <p>{service.description}</p>
+        </section>
+
+        <section className="image-comparison">
+          <ReactCompareSlider
+            className="custom-slider"
+            itemOne={<ReactCompareSliderImage src={service.beforeImage} alt="Before" />}
+            itemTwo={<ReactCompareSliderImage src={service.afterImage} alt="After" />}
+            position={50}
+          />
+        </section>
+
+       
+          <div className="section-grid-three stretch-cols">
+            <div className="grid-card">
+              <h2>About the Service</h2>
+              <p>{service.detailedDescription}</p>
+
+              <h3><FaRulerCombined /> Why We Use Nivcomp</h3>
+              <p>
+                To ensure pinpoint leveling, we rely on the Nivcomp NI0SD1-H25 — a German-engineered precision altimeter.
+              </p>
+
+              <h3><FaBroom /> Clean Site Guarantee</h3>
+              <p>
+                Our team ensures your space is spotless before we leave.
+              </p>
+            </div>
+
+            <div className="grid-card">
+              <h3><FaTools /> Our Process</h3>
+              <ul className="process-list">
+                {service.process.map((step, idx) => (
+                  <li key={idx}><FaCheckCircle className="icon" /> {step}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="grid-card">
+              <h3>Benefits</h3>
+              <ul className="benefits-list">
+                {service.benefits.map((benefit, idx) => (
+                  <li key={idx}><FaCheckCircle className="icon" /> {benefit}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="faq-gallery-grid">
+            <div className="faq-section">
+              <h3>Common Questions</h3>
+              {service.faq.map((item, idx) => (
+                <div key={idx} className="faq-item">
+                  <strong>Q: {item.q}</strong>
+                  <p>A: {item.a}</p>
+                </div>
+              ))}
+            </div>
+
+            {service.gallery && service.gallery.length > 0 && (
+              <div>
+                <h3>Project Gallery</h3>
+                <div className="gallery-grid">
+                  {service.gallery.map((imgSrc, idx) => (
+                    <img key={idx} src={imgSrc} alt={`Project gallery ${idx + 1}`} />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+      </div>
+      
           <Link to="/quote-request" className="floating-quote-button" aira-label="Request a Quote">
           <FaFileInvoice style={{color: "white" }} className='icon'/> Get Quote
           </Link>
-        </div>
-      </section>
-
+        
      
-    </div>
-    <Footer />
+      <Footer />
     </div>
   );
 };
 
 export default ServicePage;
+
+
