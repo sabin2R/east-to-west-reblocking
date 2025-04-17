@@ -1,7 +1,6 @@
 // src/components/Footer.js
 import React from 'react';
 import '../styles/style.css';
-// If using the React package for Font Awesome:
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
@@ -58,6 +57,12 @@ const Footer = () => {
           </p>
         </div>
       </div>
+      {/* Membership Badge */}
+<div className="footer-membership">
+  <p>Proud Member of<img src="/images/hia-logo.svg" alt="HIA Member Logo" className="hia-logo" />
+  </p>
+</div>
+
 
       {/* Bottom Section */}
       <div className="footer-bottom">

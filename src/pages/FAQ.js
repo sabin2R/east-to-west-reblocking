@@ -26,7 +26,7 @@ const faqSections = [
       },
       {
         question: 'Where are you located?',
-        answer: 'We are based in Coolaroo, VIC and serve surrounding Melbourne suburbs.'
+        answer: 'We are based in Coolaroo, VIC and serve all over Australia.'
       },
       {
         question: 'Are your quotes obligation-free?',
@@ -157,6 +157,22 @@ const FAQ = ({ previewCount = null }) => {
       <section className="faq-section-universal">
         <Helmet>
           <meta name="description" content="Frequently Asked Questions about our services." />
+          <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqSections.flatMap(section =>
+        section.items.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      )
+    })}
+  </script>
         </Helmet>
         <div className="faq-content" data-aos="fade-up">
           <h2 className="faq-title">Frequently Asked Questions</h2>
@@ -178,38 +194,39 @@ const FAQ = ({ previewCount = null }) => {
             </div>
           )}
 
-          {visibleSections.map((section, sIndex) => (
-            <div key={sIndex} className="faq-section-group">
-              <h3 className="faq-subtitle">{section.title}</h3>
-              <div className="faq-grid">
-                {section.items.map((faq, index) => {
-                  const key = `${sIndex}-${index}`;
-                  const isOpen = openIndexes.includes(key);
-                  return (
-                    <div key={index} className={`faq-card ${isOpen ? 'open' : ''}`}>
-                      <div
-                        className="faq-header side-by-side"
-                        onClick={() => handleToggle(sIndex, index)}
-                      >
-                        <h4 className="faq-question">{highlightText(faq.question, searchTerm)}</h4>
-                        <span className="faq-toggle">{isOpen ? '–' : '+'}</span>
-                      </div>
-                      <div
-                        className="faq-answer-wrapper"
-                        style={{
-                          maxHeight: isOpen ? '500px' : '0px',
-                          overflow: 'hidden',
-                          transition: 'max-height 0.4s ease'
-                        }}
-                      >
-                        <p className="faq-answer">{highlightText(faq.answer, searchTerm)}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+{visibleSections.map((section, sIndex) => (
+  <div key={sIndex} className="faq-section-group">
+    {!previewCount && <h3 className="faq-subtitle">{section.title}</h3>}
+    <div className="faq-grid">
+      {section.items.map((faq, index) => {
+        const key = `${sIndex}-${index}`;
+        const isOpen = openIndexes.includes(key);
+        return (
+          <div key={index} className={`faq-card ${isOpen ? 'open' : ''}`}>
+            <div
+              className="faq-header side-by-side"
+              onClick={() => handleToggle(sIndex, index)}
+            >
+              <h4 className="faq-question">{highlightText(faq.question, searchTerm)}</h4>
+              <span className="faq-toggle">{isOpen ? '–' : '+'}</span>
             </div>
-          ))}
+            <div
+              className="faq-answer-wrapper"
+              style={{
+                maxHeight: isOpen ? '500px' : '0px',
+                overflow: 'hidden',
+                transition: 'max-height 0.4s ease'
+              }}
+            >
+              <p className="faq-answer">{highlightText(faq.answer, searchTerm)}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+))}
+
         </div>
         
       </section>

@@ -152,7 +152,177 @@ Our crew uses tools like the Nivcomp NI0SD1-H25 altimeter to measure every degre
       '/images/level3.jpg',
       '/images/level4.jpg'
     ]
-  }
+  },
+  "partial-restumping": {
+    title: "Partial Restumping",
+    description: "Targeted stump replacement for localized damage.",
+    detailedDescription: `Instead of replacing every stump, we identify and replace only those that show signs of deterioration or failure. This is a cost-effective solution for homes with localized issues.`,
+    process: [
+      "Inspection to locate failing stumps",
+      "Hydraulic lifting in affected zones",
+      "Removal and replacement of damaged stumps",
+      "Repacking and levelling around the area",
+      "Clean-up and final checks"
+    ],
+    benefits: [
+      "Less disruption to your home",
+      "Reduces cost",
+      "Effective for isolated damage",
+      "Speeds up project time"
+    ],
+    faq: [
+      { q: "Is this suitable for home extensions?", a: "Yes, especially when only a portion of the house is involved." },
+      { q: "How do I know if I need partial restumping?", a: "We assess your home and recommend the best option based on damage." }
+    ]
+  },
+
+  "relevelling-no-replacement": {
+    title: "Relevelling Without Stump Replacement",
+    description: "Adjust home levels without replacing stumps.",
+    detailedDescription: `In cases where stumps are still structurally sound but have caused uneven floors due to shifting, we can relevel the home using jacks and precision packing without replacing the stumps.`,
+    process: [
+      "Precision assessment with laser and altimeter",
+      "Hydraulic lifting where needed",
+      "Packing adjustments between stumps and bearers",
+      "Verification and inspection"
+    ],
+    benefits: [
+      "Avoids full stump replacement",
+      "Quick turnaround",
+      "Improves flooring evenness",
+      "Cost-effective"
+    ],
+    faq: [
+      { q: "Does this method damage the stumps?", a: "No, we ensure all packing is done with minimal impact and high-quality materials." }
+    ]
+  },
+
+  "termite-repair": {
+    title: "Termite-Damaged Timber Replacement",
+    description: "Replace structural timber damaged by pests.",
+    afterImage: '/images/level.jpg',
+    beforeImage: '/images/level3.jpg',
+    detailedDescription: `We carefully remove and replace timber members under your home that have been affected by termites. All replacements use treated timber or steel to prevent future damage.`,
+    
+    process: [
+      "Assessment of termite damage",
+      "Removal of infested timber",
+      "Replacement with treated timber or steel",
+      "Optional termite barrier installation",
+      "Clean-up and monitoring"
+    ],
+    benefits: [
+      "Stops ongoing structural weakening",
+      "Long-term pest resistance",
+      "Improves load-bearing capacity",
+      "Peace of mind for homeowners"
+    ],
+    faq: [
+      { q: "Can you repair floors too?", a: "Yes, we can repair or replace affected subfloor structures." }
+    ]
+  },
+
+  "site-clearing": {
+    title: "Site Clearing Under House",
+    description: "Remove debris and prepare underfloor areas.",
+    detailedDescription: `We clean and clear under your house to prepare the site for structural work, insulation, or general maintenance access. This includes rubbish removal, cobweb clearing, and leveling.`,
+    process: [
+      "Access planning",
+      "Debris and waste removal",
+      "Cobwebs and vegetation clearing",
+      "Surface levelling where needed"
+    ],
+    benefits: [
+      "Improves safety and visibility",
+      "Prepares site for work",
+      "Easier future access",
+      "Professional disposal included"
+    ],
+    faq: [
+      { q: "Can you do this before inspections?", a: "Yes, we often clear sites before pest or building inspections." }
+    ]
+  },
+
+  "access-panels": {
+    title: "Subfloor Access Panel Installation",
+    description: "Install hatches for easy subfloor access.",
+    detailedDescription: `We install timber or metal access panels under the house for tradespeople, maintenance, or ventilation needs. These panels are secure, discreet, and built to last.`,
+    process: [
+      "Inspection of suitable panel locations",
+      "Cutting and framing panel entry",
+      "Installation and sealing",
+      "Testing and finishing"
+    ],
+    benefits: [
+      "Provides legal subfloor access",
+      "Improves airflow and access",
+      "Neat and secure solution"
+    ],
+    faq: [
+      { q: "Are these panels lockable?", a: "Yes, we offer lockable options upon request." }
+    ]
+  },
+
+  "permit-assistance": {
+    title: "Council Permit Assistance",
+    description: "Help with permits and compliance paperwork.",
+    detailedDescription: `We guide you through permit applications, structural engineer approvals, and documentation needed for council compliance. Let us handle the red tape.`,
+    process: [
+      "Initial scope review",
+      "Document preparation",
+      "Coordination with council",
+      "Follow-ups and updates"
+    ],
+    benefits: [
+      "Saves time and stress",
+      "Ensures legal compliance",
+      "Experienced with local councils"
+    ],
+    faq: [
+      { q: "Can you help with urgent permits?", a: "Yes — we work with urgency when project deadlines are tight." }
+    ]
+  },
+
+  "decking": {
+    title: "Decking",
+    description: "Design and build beautiful outdoor decks.",
+    detailedDescription: `Whether it’s a new deck or replacing an old one, we design and build timber decks tailored to your lifestyle. Choose from hardwood, composite, or treated pine options.`,
+    process: [
+      "Consultation and design planning",
+      "Material selection",
+      "Construction and finishing",
+      "Optional staining or sealing"
+    ],
+    benefits: [
+      "Enhances outdoor living",
+      "Custom-built for your space",
+      "Increases property value"
+    ],
+    faq: [
+      { q: "Can I choose materials?", a: "Yes — we provide a range of timber and composite options." }
+    ]
+  },
+
+  "underfloor-insulation": {
+    title: "Underfloor Insulation",
+    description: "Improve energy efficiency with insulation.",
+    detailedDescription: `Installing insulation beneath your home reduces heat loss and improves comfort. We use high-grade reflective or bulk insulation suited for Australian climates.`,
+    process: [
+      "Site inspection and insulation planning",
+      "Clearing underfloor access",
+      "Fitting insulation securely",
+      "Sealing and final review"
+    ],
+    benefits: [
+      "Lowers energy bills",
+      "Improves comfort year-round",
+      "Sustainable home improvement"
+    ],
+    faq: [
+      { q: "Will it reduce drafts and cold floors?", a: "Yes — underfloor insulation is especially effective in winter." }
+    ]
+  },
+  
 };
 
 const ServicePage = () => {

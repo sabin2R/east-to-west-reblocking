@@ -528,6 +528,24 @@
 .footer-column a:hover {
   color: var(--secondary);
 }
+.footer-membership p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.hia-logo {
+  height: 60px;
+  margin-top: 0.5rem;
+  filter: grayscale(0%);
+}
+
+
+
 
 /* Bottom Section */
 .footer-bottom {
