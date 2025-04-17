@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+  <!-- Static Pages -->
+  <url>
+    <loc>https://easttowestreblocking.com.au/</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/about</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/quote-request</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/faq</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/contact</loc>
+  </url>
+
+  <!-- Dynamic Service Pages -->
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/reblocking</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/restumping</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/underpinning</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/floor-levelling</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/jacking-levelling</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/partial-restumping</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/relevelling-no-replacement</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/termite-repair</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/site-clearing</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/access-panels</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/permit-assistance</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/decking</loc>
+  </url>
+  <url>
+    <loc>https://easttowestreblocking.com.au/service/underfloor-insulation</loc>
+  </url>
+</urlset>
