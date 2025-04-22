@@ -29,22 +29,23 @@ const HomePage = () => {
       <title>East to West Reblocking Pty Ltd | Melbourne Reblocking & Restumping Experts</title>
       <meta name="description" content="Reblocking, restumping, underpinning, and floor levelling services across Melbourne. Trusted, reliable, and fully insured." />
       <script type="application/ld+json">
-{JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "East to West Reblocking Pty Ltd",
-  "url": "https://easttowestreblocking.com.au",
-  "logo": "https://easttowestreblocking.com.au/images/logo512.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+61-433-185-183",
-    "contactType": "Customer Service",
-    "areaServed": "AU",
-    "availableLanguage": "English"
-  },
-  "sameAs": []
-})}
-</script>
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "East to West Reblocking Pty Ltd",
+      "url": "https://easttowestreblocking.com.au",
+      "description": "We are Melbourne's trusted experts in reblocking, restumping, underpinning and floor levelling.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7 Wimba Ct",
+        "addressLocality": "Coolaroo",
+        "addressRegion": "VIC",
+        "postalCode": "3048",
+        "addressCountry": "AU"
+      },
+      "telephone": "+61 433 185 183"
+    })}
+  </script>
     </Helmet>
       <Element name="home">
         <header className="hero-section1">
