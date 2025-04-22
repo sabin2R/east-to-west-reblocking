@@ -156,6 +156,7 @@ const FAQ = ({ previewCount = null }) => {
     <Element name="faq">
       <section className="faq-section-universal">
         <Helmet>
+        <title>FAQs | East to West Reblocking</title>
           <meta name="description" content="Frequently Asked Questions about our services." />
           <script type="application/ld+json">
     {JSON.stringify({
