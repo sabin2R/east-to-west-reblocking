@@ -348,6 +348,32 @@ const ServicePage = () => {
         <Helmet>
           <title>{service.title} | East to West Reblocking</title>
           <meta name="description" content={`Learn more about ${service.title} services.`} />
+          <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": service.title,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "East to West Reblocking Pty Ltd",
+    "url": "https://easttowestreblocking.com.au",
+    "telephone": "+61-433-185-183",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7 Wimba Ct",
+      "addressLocality": "Coolaroo",
+      "addressRegion": "VIC",
+      "postalCode": "3048",
+      "addressCountry": "AU"
+    }
+  },
+  "description": service.description,
+  "areaServed": {
+    "@type": "Place",
+    "name": "Melbourne"
+  }
+})}
+</script>
         </Helmet>
 
         <div className="back-button-wrapper sticky-back">
