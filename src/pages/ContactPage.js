@@ -5,11 +5,14 @@ import Footer from '../components/Footer';
 import emailjs from '@emailjs/browser';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useLocation } from 'react-router-dom';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
+  const isFullPageContact = location.pathname === '/contact';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -60,6 +63,7 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="contact-page">
+      {isFullPageContact && (
       <Helmet>
         <title>Contact East to West Reblocking | Melbourne Foundation Specialists</title>
         <meta
@@ -90,6 +94,7 @@ const handleSubmit = async (e) => {
           `}
         </script>
       </Helmet>
+      )}
 
 
       {/* Toast Notification Container */}
