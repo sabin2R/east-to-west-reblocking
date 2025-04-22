@@ -87,6 +87,29 @@ const QuoteRequestForm = () => {
       <Helmet>
         <title>Request a Quote - East to West Reblocking</title>
         <meta name="description" content="Request a personalized quote for reblocking, restumping, underpinning, or floor levelling." />
+        <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Request a Quote - East to West Reblocking",
+  "url": "https://easttowestreblocking.com.au/quote-request",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "East to West Reblocking Pty Ltd",
+    "telephone": "+61-433-185-183",
+    "email": "east2westreblocking@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7 Wimba Ct",
+      "addressLocality": "Coolaroo",
+      "addressRegion": "VIC",
+      "postalCode": "3048",
+      "addressCountry": "AU"
+    }
+  }
+})}
+</script>
+
       </Helmet>
 
       <section className="hero-section0">
