@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import FAQ from './pages/FAQ';
 import ServicesOverview from './components/ServicesOverview';
 import AOS from 'aos';
+import ScrollToTop from './components/ScrollToTop';
 import 'aos/dist/aos.css';
 
 
@@ -18,6 +19,7 @@ const App = () => {
   
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

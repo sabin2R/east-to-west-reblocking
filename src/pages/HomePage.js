@@ -8,6 +8,7 @@ import '../styles/style.css';
 import Footer from '../components/Footer';
 import CountUp from 'react-countup';
 import AOS from 'aos';
+import { Helmet } from 'react-helmet';
 import 'aos/dist/aos.css';
 
 const HomePage = () => {
@@ -22,7 +23,12 @@ const HomePage = () => {
   
 
   return (
+    
     <>
+    <Helmet>
+      <title>East to West Reblocking Pty Ltd | Melbourne Reblocking & Restumping Experts</title>
+      <meta name="description" content="Reblocking, restumping, underpinning, and floor levelling services across Melbourne. Trusted, reliable, and fully insured." />
+    </Helmet>
       <Element name="home">
         <header className="hero-section1">
           <div className="hero-overlay">

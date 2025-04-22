@@ -155,6 +155,8 @@ Our crew uses tools like the Nivcomp NI0SD1-H25 altimeter to measure every degre
   },
   "partial-restumping": {
     title: "Partial Restumping",
+    beforeImage: '/images/reblocking-before.jpg',
+    afterImage: '/images/reblocking-after.jpg',
     description: "Targeted stump replacement for localized damage.",
     detailedDescription: `Instead of replacing every stump, we identify and replace only those that show signs of deterioration or failure. This is a cost-effective solution for homes with localized issues.`,
     process: [
@@ -260,6 +262,9 @@ Our crew uses tools like the Nivcomp NI0SD1-H25 altimeter to measure every degre
     ],
     faq: [
       { q: "Are these panels lockable?", a: "Yes, we offer lockable options upon request." }
+    ],
+    gallery: [
+      '/images/sub floor pannel.jpg'
     ]
   },
 
@@ -300,12 +305,18 @@ Our crew uses tools like the Nivcomp NI0SD1-H25 altimeter to measure every degre
     ],
     faq: [
       { q: "Can I choose materials?", a: "Yes — we provide a range of timber and composite options." }
+    ],
+    gallery: [
+      '/images/Background.jpg'
+      
     ]
   },
 
   "underfloor-insulation": {
     title: "Underfloor Insulation",
     description: "Improve energy efficiency with insulation.",
+    afterImage: '/images/insulation after.jpg',
+    beforeImage: '/images/insulation before.jpg',
     detailedDescription: `Installing insulation beneath your home reduces heat loss and improves comfort. We use high-grade reflective or bulk insulation suited for Australian climates.`,
     process: [
       "Site inspection and insulation planning",
@@ -350,14 +361,37 @@ const ServicePage = () => {
           <p>{service.description}</p>
         </section>
 
-        <section className="image-comparison">
-          <ReactCompareSlider
-            className="custom-slider"
-            itemOne={<ReactCompareSliderImage src={service.beforeImage} alt="Before" />}
-            itemTwo={<ReactCompareSliderImage src={service.afterImage} alt="After" />}
-            position={50}
-          />
-        </section>
+        {service.beforeImage && service.afterImage ? (
+          // Case 1: Show comparison slider
+          <section className="image-comparison">
+            <ReactCompareSlider
+              className="custom-slider"
+              itemOne={<ReactCompareSliderImage src={service.beforeImage} alt="Before" />}
+              itemTwo={<ReactCompareSliderImage src={service.afterImage} alt="After" />}
+              position={50}
+            />
+          </section>
+        ) : service.gallery?.[0] ? (
+          // Case 2: Show single image (from gallery)
+          <section className="static-hero-image">
+            <img
+              src={service.gallery[0]}
+              alt={`${service.title} visual`}
+              className="static-service-image"
+            />
+          </section>
+        ) : (
+          // Case 3: No images available — fallback placeholder
+          <section className="static-hero-image">
+            <img
+              src="/images/no-img.png" 
+              alt="Visual not available"
+              className="static-service-image"
+            />
+          </section>
+        )}
+
+        
 
        
           <div className="section-grid-three stretch-cols">
@@ -406,16 +440,19 @@ const ServicePage = () => {
               ))}
             </div>
 
-            {service.gallery && service.gallery.length > 0 && (
-              <div>
-                <h3>Project Gallery</h3>
-                <div className="gallery-grid">
-                  {service.gallery.map((imgSrc, idx) => (
-                    <img key={idx} src={imgSrc} alt={`Project gallery ${idx + 1}`} />
-                  ))}
-                </div>
-              </div>
-            )}
+            {['reblocking', 'restumping', 'underpinning'].includes(serviceName) &&
+  service.gallery &&
+  service.gallery.length > 0 && (
+    <div>
+      <h3>Project Gallery</h3>
+      <div className="gallery-grid">
+        {service.gallery.map((imgSrc, idx) => (
+          <img key={idx} src={imgSrc} alt={`Project gallery ${idx + 1}`} />
+        ))}
+      </div>
+    </div>
+)}
+
           </div>
 
       </div>

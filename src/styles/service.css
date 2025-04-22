@@ -81,6 +81,21 @@
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
   }
+
+  .static-hero-image {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .static-service-image {
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  
   
   /* ---------- Details Card ---------- */
   .service-details {

@@ -61,9 +61,36 @@ const handleSubmit = async (e) => {
   return (
     <div className="contact-page">
       <Helmet>
-        <title>Contact Us - East to West Reblocking</title>
-        <meta name="description" content="Get in touch with us for any inquiries" />
+        <title>Contact East to West Reblocking | Melbourne Foundation Specialists</title>
+        <meta
+          name="description"
+          content="Get in touch with East to West Reblocking for reblocking, restumping, underpinning, and more. Call us or fill out our form for a free quote today."
+        />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "East to West Reblocking Pty Ltd",
+              "image": "https://easttowestreblocking.com.au/images/logo512.png",
+              "url": "https://easttowestreblocking.com.au/contact",
+              "telephone": "+61433185183",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "7 Wimba Ct",
+                "addressLocality": "Coolaroo",
+                "addressRegion": "VIC",
+                "postalCode": "3048",
+                "addressCountry": "AU"
+              },
+              "areaServed": "Melbourne",
+              "contactType": "Customer Service",
+              "availableLanguage": ["English"]
+            }
+          `}
+        </script>
       </Helmet>
+
 
       {/* Toast Notification Container */}
       <ToastContainer position="bottom-right" autoClose={4000} />
@@ -79,7 +106,7 @@ const handleSubmit = async (e) => {
         {submitted ? (
           <div className="thank-you-message">
             <h2>Thank you for contacting us!</h2>
-            <p>We will respond to your inquiry shortly.</p>
+            <p>We’ve received your message and will respond within 24 hours.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="contact-form">
@@ -144,6 +171,7 @@ const handleSubmit = async (e) => {
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
             title="East to West Reblocking Location"
           ></iframe>
         </div>
