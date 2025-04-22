@@ -7,6 +7,8 @@ import 'aos/dist/aos.css';
 import '../styles/style.css';
 import '../styles/faq.css';
 import Footer from '../components/Footer';
+import { useLocation } from 'react-router-dom';
+
 
 const faqSections = [
   {
@@ -125,6 +127,8 @@ const FAQ = ({ previewCount = null }) => {
 
   const [openIndexes, setOpenIndexes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const location = useLocation();
+  const isFullPageFAQ = location.pathname === '/faq';
 
   const handleToggle = (sectionIndex, itemIndex) => {
     const key = `${sectionIndex}-${itemIndex}`;
@@ -136,6 +140,8 @@ const FAQ = ({ previewCount = null }) => {
   const handleClearSearch = () => {
     setSearchTerm('');
   };
+
+  
 
   const filteredSections = faqSections.map((section, sIndex) => ({
     ...section,
@@ -155,6 +161,7 @@ const FAQ = ({ previewCount = null }) => {
   return (
     <Element name="faq">
       <section className="faq-section-universal">
+      {isFullPageFAQ && (
         <Helmet>
         <title>FAQs | East to West Reblocking</title>
           <meta name="description" content="Frequently Asked Questions about our services." />
@@ -175,6 +182,7 @@ const FAQ = ({ previewCount = null }) => {
     })}
   </script>
         </Helmet>
+        )}
         <div className="faq-content" data-aos="fade-up">
           <h2 className="faq-title">Frequently Asked Questions</h2>
 
